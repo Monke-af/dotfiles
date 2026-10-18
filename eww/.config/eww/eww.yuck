@@ -1,0 +1,60 @@
+(defpoll fetch_text :interval "30s" :initial "loading..."
+  `~/.config/eww/fetch.sh`)
+
+(defwindow fetch
+  :monitor 0
+  :geometry (geometry :x "40px"
+                      :y "80px"
+                      :width "520px"
+                      :height "290px"
+                      :anchor "top right")
+  :stacking "bottom"
+  :focusable false
+  :exclusive false
+  (box :class "fetch-box"
+    :halign "center"
+    :valign "center"
+    (label :class "fetch-text"
+           :text fetch_text
+           :unindent false
+           :show-truncated false
+           :halign "start")))
+
+
+
+(defwidget calendar_dropdown []
+  (box
+    :class "calendar-popup"
+    (calendar
+      :show-heading true
+      :show-day-names true
+      :show-week-numbers false)))
+
+(defwindow calendar_window
+  :monitor 0
+  :geometry (geometry
+    :x "0px"
+    :y "44px"
+    :width "300px"
+    :height "300px"
+    :anchor "top center")
+  :stacking "fg"
+  :focusable false
+  :exclusive false
+  (calendar_dropdown))
+
+
+(deflisten audio-bars :initial "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]"
+  "~/.config/eww/cava.sh")
+(defwidget visualizer []
+  (box :class "viz" :orientation "h"
+    (box :class "viz-inner" :orientation "h" :space-evenly true :spacing 4
+      (for h in audio-bars
+        (progress :class "viz-bar" :orientation "v" :flipped true :value h)))))
+(defwindow visualizer
+  :monitor 0
+  :geometry (geometry :x "60px" :y "409px" :width "480px" :height "72px" :anchor "top right")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  (visualizer))

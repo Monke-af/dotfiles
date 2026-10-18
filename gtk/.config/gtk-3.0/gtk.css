@@ -1,0 +1,87 @@
+@define-color window_bg_color #080808;
+@define-color window_fg_color #F5F5F5;
+@define-color view_bg_color #080808;
+@define-color view_fg_color #F5F5F5;
+@define-color headerbar_bg_color #101010;
+@define-color headerbar_fg_color #F5F5F5;
+@define-color headerbar_border_color #242424;
+@define-color headerbar_backdrop_color #080808;
+@define-color card_bg_color #101010;
+@define-color card_fg_color #F5F5F5;
+@define-color popover_bg_color #101010;
+@define-color popover_fg_color #F5F5F5;
+@define-color dialog_bg_color #101010;
+@define-color dialog_fg_color #F5F5F5;
+@define-color sidebar_bg_color #101010;
+@define-color sidebar_fg_color #F5F5F5;
+@define-color sidebar_backdrop_color #080808;
+@define-color sidebar_border_color #242424;
+@define-color accent_bg_color #F5F5F5;
+@define-color accent_fg_color #080808;
+@define-color accent_color #F5F5F5;
+@define-color destructive_bg_color #303030;
+@define-color destructive_fg_color #F5F5F5;
+@define-color success_color #F5F5F5;
+@define-color warning_color #F5F5F5;
+@define-color error_color #F5F5F5;
+
+* {
+  border-color: #242424;
+}
+
+button:hover,
+row:hover,
+menuitem:hover {
+  background-color: #303030;
+}
+
+button,
+entry,
+menu,
+popover > contents {
+  border-radius: 8px;
+}
+
+selection,
+row:selected,
+treeview:selected {
+  background-color: #F5F5F5;
+  color: #080808;
+}
+
+button:disabled,
+label:disabled {
+  color: #999999;
+}
+
+progressbar progress,
+scale highlight {
+  background-color: #F5F5F5;
+}
+
+progressbar trough,
+scale trough {
+  background-color: #242424;
+}
+
+.view:selected,
+.view:selected:focus,
+.view:selected:backdrop,
+.view.cell:selected,
+.view.cell:selected:focus,
+.view.cell:selected:backdrop,
+iconview:selected,
+iconview:selected:focus,
+iconview:selected:backdrop,
+iconview.cell:selected {
+  background-color: #F5F5F5;
+  color: #080808;
+  border-radius: 8px;
+}
+
+.view:selected text,
+.view:selected label,
+iconview:selected text,
+iconview:selected label {
+  color: #080808;
+}

@@ -1,0 +1,46 @@
+# core
+hyprland
+xdg-desktop-portal-hyprland
+polkit-gnome
+git
+stow
+base-devel
+
+# bar, launchers, widgets
+waybar
+rofi
+rofi-emoji
+wofi
+cava
+fastfetch
+awww
+
+# screenshots and clipboard
+grim
+slurp
+wl-clipboard
+cliphist
+wtype
+libnotify
+
+# audio and media
+pipewire
+pipewire-pulse
+wireplumber
+pavucontrol
+playerctl
+
+# system
+brightnessctl
+networkmanager
+
+# file manager
+thunar
+thunar-archive-plugin
+gvfs
+tumbler
+ffmpegthumbnailer
+
+# fonts
+ttf-jetbrains-mono-nerd
+noto-fonts-emoji

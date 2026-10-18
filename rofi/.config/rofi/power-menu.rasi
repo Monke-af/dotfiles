@@ -1,0 +1,48 @@
+```css
+* {
+    background-color: #080808;
+    text-color: #f5f5f5;
+    border-color: #303030;
+    font: "JetBrainsMono Nerd Font 13";
+}
+
+window {
+    width: 220px;
+    border: 1px;
+    border-radius: 12px;
+    padding: 8px;
+    location: northeast;
+    anchor: northeast;
+    x-offset: -12px;
+    y-offset: 48px;
+}
+
+mainbox {
+    background-color: #080808;
+    children: [ listview ];
+}
+
+listview {
+    background-color: #080808;
+    lines: 4;
+    fixed-height: true;
+    scrollbar: false;
+    spacing: 4px;
+}
+
+element {
+    background-color: #080808;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+element selected {
+    background-color: #303030;
+    text-color: #ffffff;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+```

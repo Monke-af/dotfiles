@@ -1,0 +1,4 @@
+# AUR-only packages go here, one per line.
+# install.sh checks every name in both files against the official repos
+# and uses the AUR helper only for the ones that aren't found there.
+eww

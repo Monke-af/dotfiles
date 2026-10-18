@@ -1,0 +1,7 @@
+show=dmenu
+location=3
+anchor=top_right
+width=220
+height=220
+xoffset=-12
+yoffset=46

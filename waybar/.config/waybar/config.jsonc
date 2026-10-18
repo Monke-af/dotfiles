@@ -1,0 +1,84 @@
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "spacing": 8,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/media"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "tray",
+    "custom/power"
+  ],
+
+"hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "sort-by-number": true,
+    "all-outputs": true,
+    "persistent-workspaces": {
+        "*": 5
+    }
+},
+
+  "clock": {
+    "format": "{:%a, %d %b  ·  %H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}",
+    "interval": 30,
+    "on-click": "~/.config/waybar/toggle-calendar.sh"
+  },
+
+  "network": {
+    "format-wifi": "󰤨  {essid}",
+    "format-ethernet": "󰈀  Ethernet",
+    "format-disconnected": "󰤭  Offline",
+    "tooltip-format": "{ifname}\n{ipaddr}",
+    "on-click": "kitty -e nmtui"
+  },
+
+"pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "\uf026  muted",
+    "format-icons": {
+        "default": ["\uf026", "\uf027", "\uf028"]
+    },
+    "scroll-step": 5,
+    "on-click": "~/.config/waybar/audio-menu.sh",
+    "on-click-right": "pavucontrol"
+},
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+"custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/power-menu.sh"
+},
+
+"custom/media": {
+    "exec": "~/.config/waybar/media-scroll.sh",
+    "return-type": "json",
+    "format": "{}",
+    "escape": true,
+    "tooltip": true,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous"
+}
+}
+
+

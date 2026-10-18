@@ -1,0 +1,111 @@
+* {
+    all: unset;
+}
+
+window,
+window.background {
+    background: transparent;
+    background-color: transparent;
+}
+
+.fetch-box {
+    background-color: #080808;
+    border: 1px solid #242424;
+    border-radius: 12px;
+    padding: 20px 28px;
+}
+
+.fetch-text {
+    color: #F5F5F5;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+.calendar-popup {
+    background-color: #080808;
+    color: #F5F5F5;
+    border: 1px solid #242424;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+
+.calendar-popup {
+    background-color: #080808;
+    color: #F5F5F5;
+    border: 1px solid #242424;
+    border-radius: 12px;
+    padding: 12px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+}
+
+calendar {
+    background-color: #080808;
+    color: #F5F5F5;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+calendar.header {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+calendar button {
+    color: #999999;
+    background-color: #080808;
+    border: none;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+calendar button:hover {
+    color: #FFFFFF;
+    background-color: #303030;
+}
+
+calendar button:active {
+    color: #080808;
+    background-color: #F5F5F5;
+}
+
+calendar.highlight {
+    color: #AAAAAA;
+}
+
+calendar:selected {
+    background-color: #F5F5F5;
+    color: #080808;
+}
+
+
+.viz {
+  background-color: #101010;
+  border: 1px solid #242424;
+  border-radius: 12px;
+}
+
+.viz-inner {
+  margin: 10px 14px;
+}
+
+.viz-bar {
+  min-width: 8px;
+
+  trough {
+    min-height: 50px;
+    min-width: 8px;
+    background-color: transparent;
+    border: none;
+  }
+
+  progress {
+    min-height: 2px;
+    min-width: 8px;
+    background-color: #F5F5F5;
+    border-radius: 3px;
+  }
+}
