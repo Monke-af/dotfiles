@@ -3,7 +3,7 @@ set -euo pipefail
 
 DOTS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BACKUP="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
-PACKAGES=(hypr waybar rofi wofi eww gtk thunar fastfetch cava wallpapers)
+PACKAGES=(hypr waybar rofi wofi eww gtk thunar fastfetch cava wallpapers alacritty)
 PKG_FILES=("$DOTS/packages/pacman.txt" "$DOTS/packages/aur.txt")
 
 INSTALL_DEPS=ask

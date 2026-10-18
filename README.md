@@ -69,7 +69,7 @@ sudo pacman -S git stow
 git clone https://github.com/Monke-af/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 # install the packages listed in packages/pacman.txt and packages/aur.txt, then:
-stow -t ~ hypr waybar rofi wofi eww gtk thunar fastfetch cava wallpapers
+stow -t ~ hypr waybar rofi wofi eww gtk thunar fastfetch cava wallpapers alacritty
 ```
 
 Back up your existing `~/.config/<app>` folders first. Stow refuses to overwrite real files.

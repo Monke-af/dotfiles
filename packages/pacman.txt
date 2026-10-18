@@ -44,3 +44,4 @@ ffmpegthumbnailer
 # fonts
 ttf-jetbrains-mono-nerd
 noto-fonts-emoji
+alacritty
