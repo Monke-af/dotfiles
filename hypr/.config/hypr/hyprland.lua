@@ -126,6 +126,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("discord --start-minimized")
     hl.exec_cmd("gsr-ui")
     hl.exec_cmd("easyeffects --gapplication-service")
+    hl.exec_cmd("~/.config/waybar/bluetooth-agent.py")
+
 end)
 
 -- Mouse acceleration

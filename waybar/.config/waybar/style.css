@@ -102,3 +102,31 @@ tooltip {
 tooltip label {
     color: #F5F5F5;
 }
+
+#bluetooth {
+    background-color: #080808;
+    color: #F5F5F5;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    margin: 4px 4px;
+    padding: 0 12px;
+}
+
+#bluetooth:hover {
+    background: #303030;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+    color: #999999;
+}
+
+#bluetooth.connected {
+    color: #FFFFFF;
+}
+
+tooltip {
+    background: #080808;
+    border: 1px solid #303030;
+    border-radius: 8px;
+}

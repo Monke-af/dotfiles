@@ -41,6 +41,14 @@ gvfs
 tumbler
 ffmpegthumbnailer
 
+#bluetooth
+bluez
+bluez-utils
+blueman
+python-dbus
+python-gobject
+
+
 # fonts
 ttf-jetbrains-mono-nerd
 noto-fonts-emoji

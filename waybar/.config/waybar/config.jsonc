@@ -17,6 +17,7 @@
   ],
   "modules-right": [
     "network",
+    "bluetooth",
     "pulseaudio",
     "tray",
     "custom/power"
@@ -58,6 +59,26 @@
     "on-click": "~/.config/waybar/audio-menu.sh",
     "on-click-right": "pavucontrol"
 },
+    
+    "bluetooth": {
+    "format": "<span size='x-large' weight='heavy'>󰂯</span>",
+    "format-on": "<span size='x-large' weight='heavy'>󰂯</span>",
+    "format-off": "<span size='x-large' weight='heavy'>󰂲</span>",
+    "format-disabled": "<span size='x-large' weight='heavy'>󰂲</span>",
+    "format-no-controller": "<span size='x-large' weight='heavy'>󰂲</span>",
+    "format-connected": "<span size='x-large' weight='heavy'>󰂱</span> {device_alias}",
+    "format-connected-battery": "<span size='x-large' weight='heavy'>󰂱</span> {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "max-length": 24,
+    "on-click": "~/.config/waybar/bluetooth-menu.sh",
+    "on-click-right": "sh -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'"
+},
+
+
+
   "tray": {
     "icon-size": 16,
     "spacing": 8

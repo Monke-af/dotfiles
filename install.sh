@@ -119,12 +119,28 @@ install_deps() {
     "$helper" -S --needed "${aur_pkgs[@]}"
   fi
 }
+setup_bluetooth() {
+  if ! command -v bluetoothctl >/dev/null 2>&1; then
+    warn "bluez not installed. Skipping Bluetooth setup."
+    return
+  fi
+
+  info "Enabling Bluetooth service"
+  sudo systemctl enable --now bluetooth.service || warn "Could not enable bluetooth.service"
+
+  info "Disabling blueman-applet (conflicts with the custom pairing agent)"
+  mkdir -p "$HOME/.config/systemd/user" "$HOME/.config/autostart"
+  ln -sf /dev/null "$HOME/.config/systemd/user/blueman-applet.service"
+  printf '[Desktop Entry]\nType=Application\nName=Blueman Applet\nHidden=true\n' \
+    > "$HOME/.config/autostart/blueman.desktop"
+}
 
 case "$INSTALL_DEPS" in
   yes) install_deps ;;
   ask) confirm "Install dependencies?" && install_deps || true ;;
   no)  ;;
 esac
+setup_bluetooth
 
 if ! command -v stow >/dev/null 2>&1; then
   error "GNU Stow is required. Install it (sudo pacman -S stow) and rerun."
@@ -158,8 +174,8 @@ cd "$DOTS"
 stow -t "$HOME" --restow "${existing[@]}"
 
 info "Making scripts executable"
-find "$DOTS" -type f \( -name "*.sh" -o -path "*/scripts/*" \) \
-  -not -path "$DOTS/.git/*" -exec chmod +x {} + 2>/dev/null || true
+find "$DOTS" -type f \( -name "*.sh" -o -name "*.py" -o -path "*/scripts/*" \) \
+    -not -path "$DOTS/.git/*" -exec chmod +x {} + 2>/dev/null || true
 
 if [[ ! -e "$HOME/.config/gtk-3.0/bookmarks" ]]; then
   info "Generating GTK bookmarks"
